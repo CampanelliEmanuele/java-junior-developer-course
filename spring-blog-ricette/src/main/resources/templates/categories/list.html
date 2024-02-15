@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/resources :: head('Categories list')"></head>
+<body>
+
+<main class="container-fluid">
+    <div class="container">
+        <div class="alert alert-info" th:if="${categoryList.size() == 0}">The list is empty</div>
+        <div class="mt-3">
+            <a class="btn btn-primary" th:href="@{/}">Home page</a>
+            <a class="btn btn-primary" th:href="@{/recipes}">Recipes list</a>
+            <a class="btn btn-primary" th:href="@{/categories/create}">New category</a>
+        </div>
+        <table class="table" th:unless="${categoryList.size() == 0}">
+            <thead>
+            <tr>
+                <th>Category name</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="category : ${categoryList}">
+                <td th:text="${category.name}"></td>
+                <td>
+                    <a class="btn btn-primary" th:href="@{/categories/edit/{id}(id=${category.getId()})}" role="button">
+                        <i class="fa-solid fa-pencil"></i>
+                    </a>
+                </td>
+                <td>
+
+                    <form
+                            th:action="@{/categories/delete/{id}(id=${category.id})}"
+                            method="post"
+                            onsubmit="return confirm('Are you sure?')"
+                    >
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </form>
+                </td>
+                <td th:text="${category.id}"></td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<th:block th:replace="fragments/resources :: script"></th:block>
+
+</body>
+</html>

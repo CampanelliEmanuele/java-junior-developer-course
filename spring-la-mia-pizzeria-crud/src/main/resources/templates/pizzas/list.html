@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/resources :: head('Pizza details')}"></head>
+
+<body>
+
+<main>
+    <h1 class="text-danger">Pizza List </h1>
+    <table>
+
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="pizza: ${pizzaList}">
+            <td th:text="${pizza.name}"></td>
+            <td th:text="${pizza.price}"></td>
+            <td>
+                <a class="btn" th:href="@{/pizzas/show/{id}(id=${pizza.id})}" role="button">Details</a>
+                <a class="btn" th:href="@{/pizzas/edit/{id}(id=${pizza.id})}" role="button">Edit</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" th:href="@{/pizzas/create}" role="button">Add pizza</a>
+</main>
+
+<th:block th:replace="~{fragments/resources :: script}"></th:block>
+</body>
+</html>

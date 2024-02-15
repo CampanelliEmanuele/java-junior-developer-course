@@ -1,0 +1,37 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.main-container {
+    margin-top: 5%;
+    width: 70%;
+}
+
+.text-aling-center {
+    text-align: center;
+}
+
+.pt-3 {
+    padding-top: 3%;
+}
+
+.pb-3 {
+    padding-bottom: 3%;
+}
+
+.img {
+    width: 40%;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+.flex-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}

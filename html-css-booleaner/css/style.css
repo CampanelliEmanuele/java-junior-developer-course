@@ -1,0 +1,32 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: auto;
+}
+
+ul {
+    padding-left: 1%;
+}
+
+/* css code to color odd rows */
+table {
+    width: 100%;
+}
+
+tr:nth-child(odd) {
+    background-color: #96a5a5;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #e4e7e7;
+}
+
+#first-row {
+    background-color: #38879b;
+    color: white;
+}
+
+td {
+    padding-top: 0.7%;
+    padding-bottom: 0.7%;
+}

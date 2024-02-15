@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.border-1-solid-grey {
+    border: 1.5px solid grey;
+}
+
+/* border style */
+
+.mt-1 {
+    margin-top: 1%;
+}
+
+.mt-5 {
+    margin-top: 5px;
+}
+
+/* text style */
+
+.text-center {
+    text-align: center;
+}
+
+.text-red {
+    color: red;
+}
+
+.text-white {
+    color: white;
+}
+
+/* bg colors */
+
+.bg-gray {
+    background-color: rgb(235, 233, 233);
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-sky-blue {
+    background-color: rgb(0, 136, 255);
+}
+
+.bg-red {
+    background-color: red;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Player Details</title>
+</head>
+<body>
+<h1>Player Details</h1>
+<!--h2 th:text="${player.name}"></h2>
+<div th:text="${'Score: ' + player.score}"></div-->
+<div th:object="${player}">
+  <p th:text="*{name}"></p>
+  <p>
+    <span th:text="*{'Score: ' + score}"></span>
+    <!-- badge il cui valore è newbie se score < 10000, intermediate tra 10000-100000, advanced se > 100000 -->
+    <span th:if="*{score < 10000}" style="color:green">Newbie</span>
+    <span th:if="*{score >= 10000 && score < 100000}" style="color:blue">Intermediate</span>
+    <span th:if="*{score >= 100000}" style="color:red">Advanced</span>
+  </p>
+</div>
+<a th:href="@{/players}">Back to players list</a>
+</body>
+</html>

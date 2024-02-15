@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Players</title>
+</head>
+<body>
+<!-- in questo template ho a disposizione un attributo di tipo List che si chiama players -->
+<h1>Players</h1>
+<!--<div th:text="${players}"></div>-->
+<!-- se la lista è vuota mostro un messaggio if(players.size() > 0){....}-->
+<div th:if="${players.size() == 0}">There are no players</div>
+<!-- se la lista non è vuota mostro gli elementi della lista come elenco -->
+<div th:if="${players.size() > 0}">
+  <!-- ci metto l'elenco dei players for(Player p : players){...} -->
+  <ul>
+    <li th:each="current : ${players}">
+      <a th:href="@{/players/details(name=${current.name})}" th:text="${current.name}"></a>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

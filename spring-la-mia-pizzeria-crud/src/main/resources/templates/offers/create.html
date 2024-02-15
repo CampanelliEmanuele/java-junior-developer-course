@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/resources :: head('Create an offer')}"></head>
+<body>
+
+    <main>
+        <div>
+
+            <form
+                    id="create-offer"
+                    method="post"
+                    th:action="@{/offers/create}"
+                    th:object="${offer}"
+                    class="row gy-3"
+            >
+                <input type="hidden" th:field="*{pizza}">
+                <div class="col-6">
+                    <label class="form-label" for="name">Name</label>
+                    <input class="form-control" type="text" id="name" th:field="*{name}" th:errorClass="is-invalid">
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('name')}">
+                        <ul>
+                            <li th:each="err : ${#fields.errors('name')}" th:text="${err}"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label class="form-label" for="startDate">Start Date</label>
+                    <input class="form-control" type="date" id="startDate" th:field="*{startDate}"
+                           th:errorClass="is-invalid">
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('startDate')}">
+                        <ul>
+                            <li th:each="err : ${#fields.errors('startDate')}" th:text="${err}"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label class="form-label" for="expireDate">Expire Date</label>
+                    <input class="form-control" type="date" id="expireDate" th:field="*{expireDate}"
+                           th:errorClass="is-invalid">
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('expireDate')}">
+                        <ul>
+                            <li th:each="err : ${#fields.errors('expireDate')}" th:text="${err}"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a class="btn btn-primary" th:href="@{/pizzas/show/{id}(id=${pizza.id})}">Cancel</a>
+                </div>
+            </form>
+
+        </div>
+    </main>
+
+<th:block th:replace="~{fragments/resources :: script}"></th:block>
+</body>
+</html>

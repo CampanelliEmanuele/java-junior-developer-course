@@ -1,0 +1,9 @@
+#header-navbar-icons {
+    display: flex;
+    justify-content: end;
+    gap: 2%;
+}
+
+#header-navbar-links {
+    padding-left: 0%;
+}

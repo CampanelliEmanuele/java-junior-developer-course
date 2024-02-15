@@ -1,0 +1,62 @@
+/* General purpouse */
+.content-center {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.align-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.border-1half-solid-grey {
+    border: 1.5px solid rgb(190, 187, 187);
+}
+
+
+/* header */
+.header-alignment {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.horizontal-list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.header-logo {
+    width: 35%;
+}
+
+.header-flex-item {
+    width: 30%;
+}
+
+/* main */
+.main-alignment {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 40px;
+}
+
+.main-flex-item {
+    width: 30%;
+    box-shadow: 6px 6px 5px rgb(218, 218, 218);
+}
+
+.card-image {
+    width: 100%;
+}
+
+/* footer */
+.footer-alignment {
+    justify-content: space-between;
+    align-items: center;
+}
